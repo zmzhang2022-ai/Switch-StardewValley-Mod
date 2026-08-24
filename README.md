@@ -285,3 +285,25 @@ periodic-stutter fix has been confirmed on real Switch hardware.
 - Layout 2 avoids overlap with the hat, shirt, pants, boots, and combat-pet areas.
 - Ring insertion, removal, drawing, hover behavior, and effect synchronization are supported.
 - The feature coexists with Automate, Fish Ponds, and the Skull Cavern Elevator.
+
+---
+
+## 支持项目 / Support This Project
+
+感谢每一位支持与捐赠本项目的朋友。
+
+如果您目前没有稳定收入或经济不宽裕，请不要捐赠，优先照顾好自己和家人。您的理解
+与使用，就是对本项目最大的支持。
+
+Thank you to everyone who supports and donates to this project.
+
+If you do not currently have a stable income or are experiencing financial
+hardship, please do not donate. Please take care of yourself and your family
+first. Your understanding and use of this project are the greatest support you
+can give.
+
+<p align="center">
+  <img src="assets/wechat-reward-code.png"
+       alt="微信赞赏码 / WeChat reward QR code"
+       width="420">
+</p>
