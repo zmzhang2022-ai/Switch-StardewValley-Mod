@@ -200,4 +200,3 @@ The current implementation includes:
 - Ring slots do not overlap the hat, shirt, pants, boots, or combat-pet areas.
 - Ring insertion, removal, drawing, hover behavior, and effect synchronization are supported.
 - The feature coexists with Automate, Fish Ponds, and the Skull Cavern Elevator.
-
