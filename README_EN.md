@@ -16,6 +16,9 @@
 
 </div>
 
+Copyright (C) 2026 `zmzhang2022-ai`. Licensed under [GPL-2.0-only](./LICENSE).
+Official repository: <https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod>
+
 ## About
 
 This is a native mod for the Nintendo Switch version of Stardew Valley. It does
@@ -123,6 +126,14 @@ atmosphere/
 
 The original `exefs/main` is not permanently modified. `subsdk9` performs the
 runtime injection and `main.npdm` supplies the required SVC permissions.
+
+### Copyright and Provenance
+
+- Original Mod code is licensed under [GPL-2.0-only](./LICENSE).
+- `subsdk9` contains embedded `AutomateLite v9`, copyright, and official repository identifiers.
+- Version-specific Build ID: `A5C617C14A7F3F6620B3BC8136965A4822D32B9C`.
+- The public repository does not include the original game `main` or other game-distribution files.
+- The provenance patch preserves the NSO file size, module ID, and load segments.
 
 ## User Notice
 

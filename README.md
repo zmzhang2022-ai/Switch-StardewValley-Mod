@@ -16,6 +16,9 @@
 
 </div>
 
+Copyright (C) 2026 `zmzhang2022-ai`. Licensed under [GPL-2.0-only](./LICENSE).
+Official repository: <https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod>
+
 ## 中文
 
 ### 项目简介
@@ -50,6 +53,14 @@ atmosphere/
 
 原始 `exefs/main` 不会被永久修改。`subsdk9` 负责运行时注入，`main.npdm` overlay
 提供 Mod 所需的 SVC 权限。
+
+### 版权与版本标识
+
+- 本项目原创 Mod 代码采用 [GPL-2.0-only](./LICENSE)；
+- `subsdk9` 内保留 `AutomateLite v9`、版权人和官方仓库地址标识；
+- 版本专用 Build ID：`A5C617C14A7F3F6620B3BC8136965A4822D32B9C`；
+- 公开仓库不包含原版游戏 `main` 或其他游戏分发文件；
+- `subsdk9` 的标识补丁保持 NSO 文件大小、模块 ID 和加载段不变。
 
 ### Automate Lite
 
