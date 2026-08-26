@@ -1,9 +1,20 @@
-# Stardew Valley Switch Native Mod
+<div align="center">
 
-[中文](#中文) | [English](#english)
+  <h1>Stardew Valley Switch Native Mod</h1>
 
-> A native Nintendo Switch mod for Stardew Valley, built with Atmosphère,
-> exlaunch/subsdk runtime injection, ARM64 hooks, and C++.
+  <p>Native Automate Lite, Skull Cavern Elevator, and four-ring expansion for Stardew Valley on Nintendo Switch.</p>
+
+[![Nintendo Switch](https://img.shields.io/badge/platform-Nintendo%20Switch-E60012?logo=nintendo-switch&logoColor=FFFFFF)](https://www.nintendo.com/switch/)
+[![Game Version](https://img.shields.io/badge/Stardew%20Valley-1.6.15.3-5B8C5A)](https://www.stardewvalley.net/)
+[![Atmosphère](https://img.shields.io/badge/runtime-Atmosph%C3%A8re-6F42C1)](https://github.com/Atmosphere-NX/Atmosphere)
+[![ARM64](https://img.shields.io/badge/architecture-ARM64-007ACC)](https://developer.arm.com/architectures/cpu-architecture/a-profile)
+[![GitHub stars](https://img.shields.io/github/stars/zmzhang2022-ai/Switch-StardewValley-Mod?style=flat&logo=github)](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/stargazers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/zmzhang2022-ai/Switch-StardewValley-Mod?logo=github)](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/commits/main/)
+[![微信赞赏](https://img.shields.io/badge/微信-赞赏-07C160?logo=wechat&logoColor=FFFFFF)](./assets/wechat-reward-code.png)
+
+<p><a href="./README.md">中文</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./README_EN.md">English</a></p>
+
+</div>
 
 ## 中文
 
