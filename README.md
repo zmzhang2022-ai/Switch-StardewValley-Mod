@@ -1,345 +1,165 @@
-## 当前版本：v13.1.1 · 出门黑屏修复（预发布）
+# Stardew Valley Switch Native Mod
 
-[下载安装包](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/releases/tag/v13.1.1) · [完整设计与验证](docs/FAST_ANIMATIONS_SWITCH.md) · [构建与源码](docs/BUILD_V13_1_1.md)
+Nintendo Switch《星露谷物语》原生单人整合模组：自动化、骷髅洞穴电梯、四戒指、UI 信息、自动钓鱼、NPC 大地图追踪与动画加速。
 
-- 基于 v13，包含自动化、电梯、四戒指、UI 信息、自动钓鱼及 NPC 大地图；Lookup v14 已作废。
-- 新增动画加速：默认2倍，包含武器/弹弓；设置页可关闭或选3倍，跳过吃喝确认。L3+R3仍专用于自动钓鱼。
-- 修复 v13.1 出门黑屏：移除黑幕状态 alpha 的错误 [0,1] 限制，恢复原版 >1.1 / <-0.1 完成条件。
-- 6个原版 ARM64 分支边界、42组计时回归、静态检查、构建和NSO/ZIP校验通过；**修复后真机复测未完成**。
-- 完全退出游戏，将安装包内 `atmosphere` 合并到 SD 卡根目录，成对替换 `subsdk9` 和 `main.npdm`。不要继续使用 v13.1。
+[中文](README.md) | [English](README_EN.md) | [下载 v13.1.1](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/releases/tag/v13.1.1) | [问题反馈](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/issues)
 
-目标游戏：1.6.15.3 / `0100E65002BB8000` / Build ID `A5C617C14A7F3F6620B3BC8136965A4822D32B9C`。产物身份见 [BUILD_INFO.json](BUILD_INFO.json)。下文保留基础功能介绍；旧版本验证范围不代表本版本真机通过。
+## 当前版本
 
----
+**v13.1.1，预发布版本。** 基于 v13 整合 FastAnimations，并修复 v13.1 出门后黑屏的问题。源码、构建和离线验证已完成，**修复后真机复测尚未完成**。
 
-<div align="center">
+v13.1 的动画加速错误地把黑幕状态值限制在 `0～1`，而原版需要状态值超过 `1.1` 或低于 `-0.1` 才执行切图、淡出完成回调。v13.1.1 移除错误限制，保留原版完成流程。
 
-  <h1>Stardew Valley Switch Native Mod</h1>
+- 请使用 v13.1.1，不再使用存在黑屏缺陷的 v13.1。
+- LookupAnything v14 已作废，当前包**不包含查询百科**。
+- 本项目通过原生 C++ 和 ARM64 Hook 实现功能，不需要安装 SMAPI，也不能直接加载 PC 模组 DLL。
 
-  <p>Native Automate Lite, Skull Cavern Elevator, and four-ring expansion for Stardew Valley on Nintendo Switch.</p>
+## 适用版本
 
-[![Nintendo Switch](https://img.shields.io/badge/platform-Nintendo%20Switch-E60012?logo=nintendo-switch&logoColor=FFFFFF)](https://www.nintendo.com/switch/)
-[![Game Version](https://img.shields.io/badge/Stardew%20Valley-1.6.15.3-5B8C5A)](https://www.stardewvalley.net/)
-[![Atmosphère](https://img.shields.io/badge/runtime-Atmosph%C3%A8re-6F42C1)](https://github.com/Atmosphere-NX/Atmosphere)
-[![ARM64](https://img.shields.io/badge/architecture-ARM64-007ACC)](https://developer.arm.com/architectures/cpu-architecture/a-profile)
-[![GitHub stars](https://img.shields.io/github/stars/zmzhang2022-ai/Switch-StardewValley-Mod?style=flat&logo=github)](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/stargazers)
-[![GitHub last commit](https://img.shields.io/github/last-commit/zmzhang2022-ai/Switch-StardewValley-Mod?logo=github)](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/commits/main/)
-[![微信赞赏](https://img.shields.io/badge/微信-赞赏-07C160?logo=wechat&logoColor=FFFFFF)](./assets/wechat-reward-code.png)
+| 项目 | 要求 |
+| --- | --- |
+| 平台 | Nintendo Switch，使用 Atmosphère 加载本项目 overlay |
+| 游戏版本 | Stardew Valley **1.6.15.3** |
+| Title ID | `0100E65002BB8000` |
+| 游戏 Build ID | `A5C617C14A7F3F6620B3BC8136965A4822D32B9C` |
+| 使用范围 | 单人模式；不支持联机适配 |
 
-<p><a href="./README.md">中文</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./README_EN.md">English</a></p>
+游戏版本相同也应核对 Build ID。当前偏移与 ABI 只针对上表版本，不能直接套用到其他构建。
 
-</div>
+## 安装与更新
 
-Copyright (C) 2026 `zmzhang2022-ai`. Licensed under [GPL-2.0-only](./LICENSE).
-Official repository: <https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod>
+1. 从 [v13.1.1 发布页](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/releases/tag/v13.1.1) 下载附件 **`fast-animations-singleplayer-merged-v13-1-1.zip`**。
+2. 完全退出游戏，保留原有模组文件，以便回退。
+3. 解压，将包内 **`atmosphere` 文件夹合并到 SD 卡根目录**，成对替换 `subsdk9` 和 `main.npdm`。
+4. 启动游戏，先测试农舍出门、返回和连续切换场景，再测试其他功能。
 
-## 中文
-
-### 项目简介
-
-这是针对 Nintendo Switch 版《Stardew Valley / 星露谷物语》重新实现的原生 Mod。
-项目不移植 SMAPI，也不直接运行 PC 版 Mod DLL，而是通过 Atmosphère 运行时注入和
-ARM64 Hook 实现轻量级 Automate、沙漠矿井电梯及四戒指等功能。
-
-目标版本：
+最终安装路径：
 
 ```text
-游戏版本：Stardew Valley 1.6.15.3
-Title ID：0100E65002BB8000
-Game Build ID：A5C617C14A7F3F6620B3BC8136965A4822D32B9C
+SD:/atmosphere/contents/0100E65002BB8000/exefs/
+  main.npdm
+  subsdk9
 ```
 
-所有函数 offset、虚函数槽位与 ABI 结论仅适用于上述 Build ID。游戏更新后不能直接
-复用，必须重新分析。
+无需把源码、工具链、测试、文档、审计记录或 ELF 复制到 SD 卡。不要混用不同版本的 `subsdk9` / `main.npdm`；回退也需成对恢复。仓库的 `atmosphere/` 与该版本发布附件中的安装文件一致。
 
-### 部署方法
+## 已整合功能
 
-将仓库中的 `atmosphere` 目录复制到 SD 卡根目录，合并后结构应为：
+下表描述当前代码实现范围，不代表每个场景都已在真机验收。
+
+| 模块 | 当前功能 |
+| --- | --- |
+| Automate Lite | 箱子与机器自动进料、出料；支持木头小径连接、鱼塘出料及已加载地图的后台处理。按同格或上下左右连接，不使用斜向连接；箱子满时保留产物。 |
+| 骷髅洞穴电梯 | 每5层设置停靠层，支持120层以上；原生可滚动菜单，范围依据存档记录的最深层数。 |
+| 四戒指 | 保留两个原版戒指槽并增加两个槽位，包含装卸、显示与效果同步。 |
+| UI 信息 | 物品售价和收集提示、机器剩余时间、作物与树木信息、作用范围、经验进度、运势天气、生日等日常提醒、动物抚摸提示与社交信息。 |
+| 自动钓鱼 | L3+R3切换自动循环；最大力度抛竿、等待咬钩、跳过小游戏操作、完美/铱星鱼结算、领取及再次抛竿，支持低体力进食。 |
+| NPC 大地图 | 人物头像、重叠名单、生日和每日委托提示，包含可定位的马、孩子和当日商人；不额外按是否认识或剧情解锁过滤人物。 |
+| FastAnimations | 指定日常、工具、钓鱼、交通与界面动画默认2倍；包含武器和弹弓。设置页可关闭或选3倍，开启时跳过手动吃喝确认。 |
+
+自动化沿用原版机器配方、数量和燃料规则，覆盖酿造、腌制、熔炼、回收、种子、奶酪、蛋黄酱、宝石复制、熟成、脱水、熏鱼及被动产出等现有接入机器。地图范围为已加载地点及已实例化室内，不为自动化强行加载未生成的地图。
+
+### 自动钓鱼
+
+- 手持鱼竿，站在水边并朝向可钓水面，同时按下 **L3+R3** 开启；两键均松开后再次按下可关闭。
+- 自动模式中的小游戏鱼设为铱星并走原版完美结算；垃圾、海藻与宝箱物品不强制改变品质，手动钓鱼沿用原版规则。
+- 本次原版出现的宝箱会尝试完整领取；**不提高宝箱出现率**，不改变鱼种、数量或咬钩等待时间。
+- 体力低于10点时，从背包中挑选能恢复体力的食物；鱼和料理都可能被吃掉，排除星之果实。
+- 无可用食物、背包满或凌晨1:00后暂停开始新一竿。已有一竿继续领取，背包放不下时保留领取界面。
+- 切图、换工具、过夜、重新读档或进入事件后，需要重新开启。没有自动补鱼饵、浮标或寻路功能。
+
+### NPC 地图与动画加速
+
+- 正常打开游戏大地图即可查看人物；**没有常驻小地图**。
+- “全部显示”只涵盖已存在、已加载且有原版地图映射的人物，不会生成角色或解锁地图。逐人追踪偏好仍生效。
+- 动画加速不修改游戏时钟或机器生产时长；手动抛竿蓄力、等待咬钩及普通钓鱼小游戏不额外加速。
+- 剧情过场保持原速，匕首特殊连击沿用原版；部分独立粒子和特殊贴图层保持原速。
+
+## 设置与操作
+
+打开游戏主菜单，用光标点击左下方 **“UI 信息设置”**。方向键上下选择、左右翻页，确认键切换，返回键保存并关闭；也支持光标点击。
+
+| 项目 | 操作 |
+| --- | --- |
+| 自动钓鱼开关 | 同时按下L3+R3，两键释放后可再次触发 |
+| 动画加速与免吃喝确认 | 设置页末尾开关，默认开启；关闭后恢复原版速度及吃喝确认 |
+| 动画倍率 | “动画速度3倍（关闭为2倍）”，默认关闭，即2倍 |
+| 地图追踪总开关 | UI信息设置中的“地图村民位置” |
+| 单个人物追踪 | 社交页右侧“地图 ✓ / ×” |
+| 范围显示 | 设置中可选择按住L3才显示，默认无需按住 |
+
+UI与动画设置按存档配置，保存在 SD 卡 `/config/uiinfosuite2/`，通过双槽校验恢复；自动钓鱼开关不会写入存档。旧v13配置保留原选项，新增动画选项默认2倍。
+
+## 验证状态与限制
+
+| 检查 | v13.1.1 状态 |
+| --- | --- |
+| 静态检查及ARM64编译期回归 | 通过，包含配置、UI、钓鱼、NPC地图与黑幕推进逻辑 |
+| 原版ARM64黑幕分支隔离验证 | 6个边界、42组计时用例通过；不执行整个游戏或回调 |
+| 本地编译链接 | 通过；保留既有框架告警，不是零告警构建 |
+| 安装产物 | NSO三段解压/哈希、配对文件、ZIP及源码清单校验通过 |
+| Hook预算 | 32/40槽，剩余8槽；本次动画模块未新增Hook |
+| 修复后真机测试 | **未完成**，需复测切图、输入、画面、性能及组合功能 |
+
+各模块共享游戏进程；没有地址重叠不代表运行时绝对互不影响。动画模块复用原版对象更新，同一对象的其他帧计时也可能推进；战斗、交通、物品完成回调及大农场性能需要真机回归。各历史版本的测试反馈不能直接视作当前整合包全面通过。
+
+本项目未实现联机同步、SMAPI/GMCM、PC模组的全部扩展接口或任意自定义地图包。完整实现范围见下方文档。
+
+## 仓库目录
+
+| 路径 | 内容 | 玩家是否需要安装 |
+| --- | --- | --- |
+| `assets/` | README展示资源，包括支持二维码 | 否 |
+| `atmosphere/` | v13.1.1配对的`subsdk9`和`main.npdm` | **是** |
+| `docs/` | 功能说明、历史设计记录及构建条件 | 否 |
+| `runtime/` | 原生C++源码、框架与构建配置 | 否 |
+| `tests/` | 编译期回归测试源码 | 否 |
+| `toolchains/` | 兼容头文件；不是完整编译工具链 | 否 |
+| `tools/` | 构建、静态检查、离线分析及打包脚本 | 否 |
+| `validation/` | 发布时的测试、构建与产物校验记录 | 否 |
+| `BUILD_INFO.json` | 源码哈希、产物身份、功能范围和验证信息 | 否 |
+
+`docs/`中的钓鱼、NPC和UI文档保留各模块引入时的版本号与历史记录；当前整合版本以本页、`BUILD_INFO.json`和FastAnimations文档为准。
+
+## 源码与开发
+
+实际构建入口为 `tools/build_poc_clang.ps1`，源码位于 `runtime/source/`。需要按脚本配置Windows LLVM/devkitPro路径；仓库不附带工具链二进制或原版游戏文件。离线反汇编/模拟验证还需要目标版本的本地分析缓存和Python依赖。
+
+- [构建条件与源码说明](docs/BUILD_V13_1_1.md)
+- [动画加速及黑屏修复](docs/FAST_ANIMATIONS_SWITCH.md)
+- [自动钓鱼](docs/AUTO_FISHING_SWITCH.md)
+- [NPC大地图](docs/NPC_MAP_LOCATIONS_SWITCH.md)
+- [UI信息与设置](docs/UIINFO_SUITE2_SWITCH.md)
+- [项目故障经验与开放问题](PROJECT_LESSONS.md)
+
+打包脚本还依赖开发工作区中的旧版本基线和分析证据，不能在全新检出后直接无依赖运行。版本信息从源码编译生成，**不要直接替换压缩NSO中的字节**；旧二进制打标脚本已移除。
+
+## v13.1.1 文件身份
 
 ```text
-atmosphere/
-└─ contents/
-   └─ 0100E65002BB8000/
-      └─ exefs/
-         ├─ main.npdm
-         └─ subsdk9
+安装包 SHA-256
+B0B4FA69E723E67342B297B702A859A4F24464F1F5359BCA2B548B67BF5FF52A
+
+subsdk9 SHA-256
+8F43C7ECDFB4055D2EAC3B49B0F22C11A1D771D0754B24F7CC81FD80610C4415
+
+main.npdm SHA-256
+F63D42112A3866CF6BF04ABD011F30BB3DF5E852BE244A2200FDDCD9A4898D85
+
+模组 Module ID
+995CAEC73CA65CEB3A5D7E682005EBAC245500B1
 ```
 
-原始 `exefs/main` 不会被永久修改。`subsdk9` 负责运行时注入，`main.npdm` overlay
-提供 Mod 所需的 SVC 权限。
+反馈问题时，请提供模组版本、游戏Build ID、触发步骤、相关日志，以及关闭动画加速后是否仍发生。
 
-### 版权与版本标识
+## 致谢与许可
 
-- 本项目原创 Mod 代码采用 [GPL-2.0-only](./LICENSE)；
-- `subsdk9` 内保留 `Automate Lite v13.1.1`、版权人和官方仓库地址标识；
-- 版本专用 Build ID：`A5C617C14A7F3F6620B3BC8136965A4822D32B9C`；
-- 公开仓库不包含原版游戏 `main` 或其他游戏分发文件；
-- Version identifiers are compiled from source; all three NSO segments are decompressed and hash-verified. Do not patch compressed NSO bytes.
+原生实现参考了Automate、Skull Cavern Elevator、UI Info Suite 2、Yet Another Fishing Mod、NPC Map Locations与Fast Animations的功能思路；框架基于[exlaunch](https://github.com/shadowninja108/exlaunch)。这是针对Switch的原生整合实现，不表示PC原作者对本移植版本提供支持。第三方文件保留其原有许可声明。
 
-### Automate Lite
+Copyright © 2026 `zmzhang2022-ai`。项目原生Mod代码采用[GPL-2.0-only](LICENSE)。仓库不分发原版游戏可执行文件或游戏资源。
 
-支持下列自动化网络：
+## 支持项目
 
-```text
-[箱子]—[机器]
-[箱子]—[木头小径]—[机器]
-[箱子]—[机器]—[机器]
-[箱子]—[木头小径]—[机器]—[机器]
-```
+感谢使用、反馈和支持。如果暂时没有稳定收入或经济不宽裕，请不要捐赠，优先照顾自己和家人。
 
-- 箱子、机器、鱼塘和木头小径会被加入自动化网络；
-- 使用同格及上下左右四向连接，不使用斜向连接；
-- 机器可以继续连接其他机器；
-- 一个网络可以包含多个箱子与多台机器；
-- 每次更新先收取成品，再尝试下一轮进料；
-- 箱子已满时不会清空机器，成品保留在原机器中；
-- 自动化调用游戏原始 `Chest.AddItem(...)`、`Object.AttemptAutoLoad(...)` 和机器
-  output lifecycle，不直接硬写 timer、`heldObject` 或库存 stack；
-- 有效原料、配方、数量与燃料要求由游戏原版机器数据决定。
-
-### 支持的机器
-
-| 机器 | 自动进料 | 自动出料 | 说明 |
-|---|---:|---:|---|
-| 压酪机 | 是 | 是 | 原版逻辑判断牛奶类型 |
-| 回收机 | 是 | 是 | 原版逻辑处理可回收垃圾 |
-| 太阳能板 | 不需要 | 是 | 自主产出型机器 |
-| 完美雕像 | 不需要 | 是 | 自主产出型机器 |
-| 宝石复制机 | 是 | 是 | 原版宝石输入及连续生产逻辑 |
-| 小桶 | 是 | 是 | 原版 `Data/Machines` 配方 |
-| 无尽财富之雕像 | 不需要 | 是 | 自主产出型机器 |
-| 木桶 | 是 | 是 | 原版逻辑判断可陈酿物品 |
-| 树液采集器 | 不需要 | 是 | 收取后调用原版树木产物刷新 |
-| 烘干机 | 是 | 是 | 原版多物品配方 |
-| 熏鱼机 | 是 | 是 | 原版逻辑处理输入和燃料 |
-| 熔炉 | 是 | 是 | 原版逻辑处理矿石和煤炭 |
-| 真正完美的雕像 | 不需要 | 是 | 自主产出型机器 |
-| 种子生产机 | 是 | 是 | 支持原版随机种子输出 |
-| 蛋黄酱机 | 是 | 是 | 原版逻辑判断蛋类 |
-| 避雷针 | 不需要 | 是 | 自主产出型机器 |
-| 重型树液采集器 | 不需要 | 是 | 原版树木产物刷新 |
-| 重型熔炉 | 是 | 是 | 原版批量熔炼配方 |
-| 罐头机 | 是 | 是 | `(BC)15`，v9 新增 |
-| 晶球破开器 | 是 | 是 | `(BC)182`，v9 新增；1.6 不再需要煤炭 |
-
-罐头机与晶球破开器已经通过源码、ELF、AArch64 和 NSO 静态验证；连续进料、完成
-出料及箱满保护仍需在 Switch 真机完成闭环验证。
-
-### 木头小径连接器
-
-木头小径物品 ID `405` / `(O)405` 可作为 Automate 网络连接器。每格小径是一个独立
-节点，通过同格及上下左右 flood fill 连接箱子与机器。
-
-terrain feature 的 concrete dictionary value 是类似 `NetRef<TerrainFeature>` 的网络
-字段包装器。当前实现复现游戏原版虚函数解包流程，再通过 `Flooring.GetData()` 验证
-`FloorsAndPathsData.ItemId`。
-
-### 鱼塘
-
-- 鱼塘作为自动出料机器；
-- 按完整 TileArea 加入自动化索引；
-- 鱼籽等已经生成的产物会自动进入连接箱子；
-- 箱子满时保留鱼塘产物；
-- 支持直接相邻及木头小径连接；
-- 不自动投入鱼或任务物品。
-
-### 全地图与性能
-
-Automate 覆盖当前 Location、`Game1.locations` 中所有已加载根地图，以及农舍、小屋等
-已经实例化的建筑室内。玩家不在场时仍可跨地图自动进料和出料，但 Mod 不会为了
-自动化主动加载尚未加载的 Location。
-
-性能调度：
-
-```text
-当前地图：每 30 Tick 扫描
-后台地图：每 4 Tick 轮询一个非当前 Location
-```
-
-全地图工作被分散到多个帧；terrain unwrap 每张地图只解析一次；flood tile 去重使用
-开放寻址哈希；后台状态不跨 Tick 保留托管 `GameLocation*` 裸指针。v8 的周期性卡顿
-优化已由 Switch 真机确认成功。
-
-### 沙漠矿井电梯
-
-- 沙漠矿井大厅与符合条件的 Skull Cavern 楼层会生成电梯和图标；
-- 支持 120 层以上；
-- 每 5 层作为一个电梯层；
-- 使用可滚动的原生菜单；
-- 根据存档记录的最深楼层决定可选范围；
-- 与 Automate 共存于同一个 `subsdk9`。
-
-### 四戒指
-
-- 保留原版两个戒指栏位并新增两个，总计四个；
-- 使用 Layout 2，避免与帽子、衣服、裤子、鞋子和战斗宠物区域重叠；
-- 支持戒指放入、取出、绘制、悬停与效果同步；
-- 与 Automate、鱼塘及沙漠矿井电梯共存。
-
----
-
-## English
-
-### Overview
-
-This is a native mod for the Nintendo Switch version of Stardew Valley. It does
-not port SMAPI or run PC mod DLLs. Instead, it implements lightweight Automate,
-a Skull Cavern Elevator, four ring slots, and related features through
-Atmosphère runtime injection and ARM64 hooks.
-
-Target build:
-
-```text
-Game version: Stardew Valley 1.6.15.3
-Title ID: 0100E65002BB8000
-Game Build ID: A5C617C14A7F3F6620B3BC8136965A4822D32B9C
-```
-
-All function offsets, virtual-function slots, and ABI findings apply only to
-this Build ID. They must be re-analyzed after a game update.
-
-### Installation
-
-Copy the repository's `atmosphere` directory to the root of the SD card and
-merge it so the final layout is:
-
-```text
-atmosphere/
-└─ contents/
-   └─ 0100E65002BB8000/
-      └─ exefs/
-         ├─ main.npdm
-         └─ subsdk9
-```
-
-The original `exefs/main` is not permanently modified. `subsdk9` performs the
-runtime injection, while the `main.npdm` overlay supplies the SVC permissions
-required by the mod.
-
-### Automate Lite
-
-Supported network layouts:
-
-```text
-[Chest]—[Machine]
-[Chest]—[Wood Path]—[Machine]
-[Chest]—[Machine]—[Machine]
-[Chest]—[Wood Path]—[Machine]—[Machine]
-```
-
-- Chests, machines, Fish Ponds, and Wood Paths participate in automation networks.
-- Same-tile and four-directional connections are used; diagonal connections are not.
-- Machines can connect onward to other machines.
-- One network may contain multiple chests and machines.
-- Each update collects finished products before attempting the next input cycle.
-- If every chest is full, the finished product remains in its machine.
-- Automation calls the original `Chest.AddItem(...)`, `Object.AttemptAutoLoad(...)`,
-  and machine output lifecycle instead of directly writing timers, `heldObject`,
-  or inventory stacks.
-- The original game data determines valid inputs, recipes, quantities, and fuel.
-
-### Supported Machines
-
-| Machine | Auto-input | Auto-output | Notes |
-|---|---:|---:|---|
-| Cheese Press | Yes | Yes | Original logic selects the milk type. |
-| Recycling Machine | Yes | Yes | Original logic handles recyclable trash. |
-| Solar Panel | Not required | Yes | Self-producing machine. |
-| Statue of Perfection | Not required | Yes | Self-producing machine. |
-| Crystalarium | Yes | Yes | Original gem-input and continuous-production logic. |
-| Keg | Yes | Yes | Original `Data/Machines` recipes. |
-| Statue of Endless Fortune | Not required | Yes | Self-producing machine. |
-| Cask | Yes | Yes | Original logic selects products that can be aged. |
-| Tapper | Not required | Yes | Refreshes the original tree product after collection. |
-| Dehydrator | Yes | Yes | Original multi-item recipe. |
-| Fish Smoker | Yes | Yes | Original logic handles input and fuel. |
-| Furnace | Yes | Yes | Original logic handles ore and coal. |
-| Statue of True Perfection | Not required | Yes | Self-producing machine. |
-| Seed Maker | Yes | Yes | Supports the original randomized seed output. |
-| Mayonnaise Machine | Yes | Yes | Original logic selects the egg type. |
-| Lightning Rod | Not required | Yes | Self-producing machine. |
-| Heavy Tapper | Not required | Yes | Uses the original tree-product refresh. |
-| Heavy Furnace | Yes | Yes | Original batch-smelting recipe. |
-| Preserves Jar | Yes | Yes | `(BC)15`, added in v9. |
-| Geode Crusher | Yes | Yes | `(BC)182`, added in v9; coal is no longer required in 1.6. |
-
-The Preserves Jar and Geode Crusher have passed source, ELF, AArch64, and NSO
-static verification. Continuous input/output and full-chest protection still
-require end-to-end verification on real Switch hardware.
-
-### Wood Path Connectors
-
-Wood Paths with item ID `405` / `(O)405` act as Automate network connectors.
-Each path tile is an independent node and joins chests and machines through
-same-tile and four-directional flood fill.
-
-Concrete `terrainFeatures` dictionary values are network-field wrappers similar
-to `NetRef<TerrainFeature>`. The implementation reproduces the original virtual
-unwrap flow and validates `FloorsAndPathsData.ItemId` through
-`Flooring.GetData()`.
-
-### Fish Ponds
-
-- Fish Ponds are output-only Automate machines.
-- Their complete TileArea is added to the automation index.
-- Roe and other generated products are moved into connected chests.
-- Products remain in the pond when all chests are full.
-- Both direct adjacency and Wood Path connections are supported.
-- Fish and quest items are not inserted automatically.
-
-### Full-map Coverage and Performance
-
-Automate covers the current Location, every loaded root map in
-`Game1.locations`, and instantiated interiors such as Farmhouses and Cabins.
-Cross-map input and output continue while the player is elsewhere, but the mod
-does not force-load unloaded Locations solely for automation.
-
-Scheduling:
-
-```text
-Current map: scan every 30 ticks
-Background maps: poll one non-current Location every 4 ticks
-```
-
-Full-map work is distributed across frames; terrain unwrap is resolved once per
-map; flood-tile deduplication uses open-addressing hashing; and managed
-`GameLocation*` raw pointers are not retained across background ticks. The v8
-periodic-stutter fix has been confirmed on real Switch hardware.
-
-### Skull Cavern Elevator
-
-- Elevators and icons are generated in the Skull Cavern entrance and eligible floors.
-- Floors beyond level 120 are supported.
-- One elevator stop is available every five floors.
-- Deep floors are shown in a native scrollable menu.
-- The selectable range follows the deepest floor recorded in the save.
-- The feature coexists with Automate in the same `subsdk9` module.
-
-### Four Ring Slots
-
-- The two original ring slots are preserved and two more are added, for four total.
-- Layout 2 avoids overlap with the hat, shirt, pants, boots, and combat-pet areas.
-- Ring insertion, removal, drawing, hover behavior, and effect synchronization are supported.
-- The feature coexists with Automate, Fish Ponds, and the Skull Cavern Elevator.
-
----
-
-## 支持项目 / Support This Project
-
-感谢每一位支持与捐赠本项目的朋友。
-
-如果您目前没有稳定收入或经济不宽裕，请不要捐赠，优先照顾好自己和家人。您的理解
-与使用，就是对本项目最大的支持。
-
-Thank you to everyone who supports and donates to this project.
-
-If you do not currently have a stable income or are experiencing financial
-hardship, please do not donate. Please take care of yourself and your family
-first. Your understanding and use of this project are the greatest support you
-can give.
-
-<p align="center">
-  <img src="assets/wechat-reward-code.png"
-       alt="微信赞赏码 / WeChat reward QR code"
-       width="420">
-</p>
+<p align="center"><img src="assets/wechat-reward-code.png" alt="微信赞赏码" width="360"></p>
