@@ -1,0 +1,96 @@
+{
+  "candidate": {
+    "path": "D:\\Switch_StardewVally\\runtime\\build-clang\\subsdk9-normal",
+    "size": 131263,
+    "sha256": "8F43C7ECDFB4055D2EAC3B49B0F22C11A1D771D0754B24F7CC81FD80610C4415",
+    "valid": true,
+    "segments": [
+      {
+        "name": "text",
+        "file_start": "0x100",
+        "file_end_exclusive": "0x1a2f5",
+        "compressed": true,
+        "hash_enabled": true,
+        "size_match": true,
+        "sha256": "6730831D56B06E519400ADC63FBCBC4E7EE7726EBC030545EC62D444B3BB32CB",
+        "hash_match": true,
+        "valid": true
+      },
+      {
+        "name": "rodata",
+        "file_start": "0x1a2f5",
+        "file_end_exclusive": "0x1ff88",
+        "compressed": true,
+        "hash_enabled": true,
+        "size_match": true,
+        "sha256": "7C4455BB862586BDDE0312E31B18C71A0AEFFA710C0C79A6F2CEE39678BD42CE",
+        "hash_match": true,
+        "valid": true,
+        "first_32_bytes": "000000000d0000006175746f6d6174655f6c6974650000000000000000000000"
+      },
+      {
+        "name": "data",
+        "file_start": "0x1ff88",
+        "file_end_exclusive": "0x200bf",
+        "compressed": true,
+        "hash_enabled": true,
+        "size_match": true,
+        "sha256": "11CD812CEDAB8134000ABCB947B95959F7D895AFDF1D450BCD2DB114025155C6",
+        "hash_match": true,
+        "valid": true
+      }
+    ],
+    "flags": "0x3f",
+    "module_id": "995CAEC73CA65CEB3A5D7E682005EBAC245500B1"
+  },
+  "reference": {
+    "path": "D:\\Switch_StardewVally\\atmosphere\\contents\\0100E65002BB8000\\exefs\\subsdk9",
+    "size": 131263,
+    "sha256": "8F43C7ECDFB4055D2EAC3B49B0F22C11A1D771D0754B24F7CC81FD80610C4415",
+    "valid": true,
+    "segments": [
+      {
+        "name": "text",
+        "file_start": "0x100",
+        "file_end_exclusive": "0x1a2f5",
+        "compressed": true,
+        "hash_enabled": true,
+        "size_match": true,
+        "sha256": "6730831D56B06E519400ADC63FBCBC4E7EE7726EBC030545EC62D444B3BB32CB",
+        "hash_match": true,
+        "valid": true
+      },
+      {
+        "name": "rodata",
+        "file_start": "0x1a2f5",
+        "file_end_exclusive": "0x1ff88",
+        "compressed": true,
+        "hash_enabled": true,
+        "size_match": true,
+        "sha256": "7C4455BB862586BDDE0312E31B18C71A0AEFFA710C0C79A6F2CEE39678BD42CE",
+        "hash_match": true,
+        "valid": true,
+        "first_32_bytes": "000000000d0000006175746f6d6174655f6c6974650000000000000000000000"
+      },
+      {
+        "name": "data",
+        "file_start": "0x1ff88",
+        "file_end_exclusive": "0x200bf",
+        "compressed": true,
+        "hash_enabled": true,
+        "size_match": true,
+        "sha256": "11CD812CEDAB8134000ABCB947B95959F7D895AFDF1D450BCD2DB114025155C6",
+        "hash_match": true,
+        "valid": true
+      }
+    ],
+    "flags": "0x3f",
+    "module_id": "995CAEC73CA65CEB3A5D7E682005EBAC245500B1"
+  },
+  "comparison": {
+    "same_size": true,
+    "same_header": true,
+    "different_bytes_in_overlap": 0,
+    "different_ranges_hex_end_exclusive": []
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "passed": true,
+  "original_branch": "0x1136804..0x113688c",
+  "upper_threshold": 1.100000023841858,
+  "lower_threshold": -0.10000000149011612,
+  "boundaries": [
+    {
+      "alpha": 1.0,
+      "result": "continue"
+    },
+    {
+      "alpha": 1.100000023841858,
+      "result": "continue"
+    },
+    {
+      "alpha": 1.12,
+      "result": "black_callback"
+    },
+    {
+      "alpha": 0.0,
+      "result": "continue"
+    },
+    {
+      "alpha": -0.10000000149011612,
+      "result": "continue"
+    },
+    {
+      "alpha": -0.12,
+      "result": "clear_callback"
+    }
+  ],
+  "cases": [
+    {
+      "elapsed_ms": 1,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 579,
+      "fixed_callback_frame": 579
+    },
+    {
+      "elapsed_ms": 1,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 579,
+      "fixed_callback_frame": 579
+    },
+    {
+      "elapsed_ms": 1,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 290
+    },
+    {
+      "elapsed_ms": 1,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 290
+    },
+    {
+      "elapsed_ms": 1,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 193
+    },
+    {
+      "elapsed_ms": 1,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 193
+    },
+    {
+      "elapsed_ms": 8,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 73,
+      "fixed_callback_frame": 73
+    },
+    {
+      "elapsed_ms": 8,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 73,
+      "fixed_callback_frame": 73
+    },
+    {
+      "elapsed_ms": 8,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 37
+    },
+    {
+      "elapsed_ms": 8,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 37
+    },
+    {
+      "elapsed_ms": 8,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 25
+    },
+    {
+      "elapsed_ms": 8,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 25
+    },
+    {
+      "elapsed_ms": 16,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 37,
+      "fixed_callback_frame": 37
+    },
+    {
+      "elapsed_ms": 16,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 37,
+      "fixed_callback_frame": 37
+    },
+    {
+      "elapsed_ms": 16,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 19
+    },
+    {
+      "elapsed_ms": 16,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 19
+    },
+    {
+      "elapsed_ms": 16,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 13
+    },
+    {
+      "elapsed_ms": 16,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 13
+    },
+    {
+      "elapsed_ms": 17,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 35,
+      "fixed_callback_frame": 35
+    },
+    {
+      "elapsed_ms": 17,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 35,
+      "fixed_callback_frame": 35
+    },
+    {
+      "elapsed_ms": 17,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 18
+    },
+    {
+      "elapsed_ms": 17,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 18
+    },
+    {
+      "elapsed_ms": 17,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 12
+    },
+    {
+      "elapsed_ms": 17,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 12
+    },
+    {
+      "elapsed_ms": 33,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 18,
+      "fixed_callback_frame": 18
+    },
+    {
+      "elapsed_ms": 33,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 18,
+      "fixed_callback_frame": 18
+    },
+    {
+      "elapsed_ms": 33,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 9
+    },
+    {
+      "elapsed_ms": 33,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 9
+    },
+    {
+      "elapsed_ms": 33,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 6
+    },
+    {
+      "elapsed_ms": 33,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 6
+    },
+    {
+      "elapsed_ms": 50,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 12,
+      "fixed_callback_frame": 12
+    },
+    {
+      "elapsed_ms": 50,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 12,
+      "fixed_callback_frame": 12
+    },
+    {
+      "elapsed_ms": 50,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 6
+    },
+    {
+      "elapsed_ms": 50,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 6
+    },
+    {
+      "elapsed_ms": 50,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 4
+    },
+    {
+      "elapsed_ms": 50,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 4
+    },
+    {
+      "elapsed_ms": 100,
+      "multiplier": 1,
+      "fade_in": true,
+      "old_callback_frame": 6,
+      "fixed_callback_frame": 6
+    },
+    {
+      "elapsed_ms": 100,
+      "multiplier": 1,
+      "fade_in": false,
+      "old_callback_frame": 6,
+      "fixed_callback_frame": 6
+    },
+    {
+      "elapsed_ms": 100,
+      "multiplier": 2,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 3
+    },
+    {
+      "elapsed_ms": 100,
+      "multiplier": 2,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 3
+    },
+    {
+      "elapsed_ms": 100,
+      "multiplier": 3,
+      "fade_in": true,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 2
+    },
+    {
+      "elapsed_ms": 100,
+      "multiplier": 3,
+      "fade_in": false,
+      "old_callback_frame": null,
+      "fixed_callback_frame": 2
+    }
+  ],
+  "old_deadlocks": 28,
+  "scope": "Original ARM64 branch in isolated emulator, synthetic per-frame update ordering. No callbacks or whole game executed; hardware not tested."
+}

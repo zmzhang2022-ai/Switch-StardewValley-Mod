@@ -1,0 +1,288 @@
+{
+  "jit_bytes": 8192,
+  "trampoline_bytes": 200,
+  "capacity": 40,
+  "conservative_hooks_including_trace": 32,
+  "minimum_spare_slots": 8,
+  "spare_slots": 8,
+  "passed": true,
+  "hooks": [
+    "AnimalDrawHook",
+    "AutoFishingBobberUpdateHook",
+    "AutoFishingStartCastingHook",
+    "ExperienceHook",
+    "Game1EnterMineHook",
+    "Game1ExitActiveMenuHook",
+    "Game1WarpFarmerHook",
+    "GameTickHook",
+    "InventoryPageConstructorHook",
+    "InventoryPageDrawHook",
+    "InventoryPagePerformHoverActionHook",
+    "InventoryPageReceiveLeftClickHook",
+    "ItemTooltipHook",
+    "MenuCleanupHook",
+    "MenuClickHook",
+    "MenuDrawHook",
+    "MenuKeyHook",
+    "MenuPadHook",
+    "MenuRightHook",
+    "MenuScrollHook",
+    "MineElevatorMenuConstructorHook",
+    "MineElevatorMenuReceiveLeftClickHook",
+    "MineShaftLowestLevelReachedHook",
+    "NpcMapHook",
+    "NpcMapTooltipHook",
+    "ObjectCheckForActionTraceHook",
+    "PetDrawHook",
+    "ShopDrawHook",
+    "SocialClickHook",
+    "SocialHeartHook",
+    "SocialRowHook",
+    "UiInfoDrawHudHook"
+  ],
+  "limitation": "Static inventory; installation must remain once-only and outside loops."
+}
+In file included from D:\Switch_StardewVally\runtime\source\automate\automate_manager.cpp:6:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\elevator\skull_cavern_elevator.cpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\fastanimations\fastanimations.cpp:4:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\fishing\fishing.cpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\game\runtime.cpp:3:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\hooks\game_update.cpp:8:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\hooks\skull_cavern_elevator.cpp:6:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\hooks\wear_more_rings.cpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+D:\Switch_StardewVally\runtime\source\lib\hook\nx64\hook_impl.cpp:69:23: warning: anonymous non-C-compatible type given name for linkage purposes by typedef declaration; add a tag name here [-Wnon-c-typedef-for-linkage]
+   69 |         typedef struct {
+      |                       ^
+      |                        context
+D:\Switch_StardewVally\runtime\source\lib\hook\nx64\hook_impl.cpp:88:9: note: type is not C-compatible due to this member declaration
+   88 |         public:
+      |         ^~~~~~~
+D:\Switch_StardewVally\runtime\source\lib\hook\nx64\hook_impl.cpp:122:11: note: type is given name 'context' for linkage purposes by this typedef declaration
+  122 |         } context;
+      |           ^
+1 warning generated.
+clang: warning: argument unused during compilation: '-fvisibility=default' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-ffunction-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fdata-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __SWITCH__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __RTLD_6XX__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND=Module' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND_ENUM=2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_PROGRAM_ID=0x0100E65002BB8000' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_USE_FAKEHEAP' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-isystem D:\Switch_StardewVally\toolchains\root\opt\devkitpro\devkitA64\aarch64-none-elf\include' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-O2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fvisibility=default' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-ffunction-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fdata-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __SWITCH__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __RTLD_6XX__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND=Module' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND_ENUM=2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_PROGRAM_ID=0x0100E65002BB8000' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_USE_FAKEHEAP' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-isystem D:\Switch_StardewVally\toolchains\root\opt\devkitpro\devkitA64\aarch64-none-elf\include' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-O2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fvisibility=default' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-ffunction-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fdata-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __SWITCH__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __RTLD_6XX__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND=Module' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND_ENUM=2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_PROGRAM_ID=0x0100E65002BB8000' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_USE_FAKEHEAP' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-isystem D:\Switch_StardewVally\toolchains\root\opt\devkitpro\devkitA64\aarch64-none-elf\include' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-O2' [-Wunused-command-line-argument]
+In file included from D:\Switch_StardewVally\runtime\source\lib\init\init.cpp:72:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+clang: warning: argument unused during compilation: '-fvisibility=default' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-ffunction-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fdata-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __SWITCH__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __RTLD_6XX__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND=Module' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND_ENUM=2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_PROGRAM_ID=0x0100E65002BB8000' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_USE_FAKEHEAP' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-isystem D:\Switch_StardewVally\toolchains\root\opt\devkitpro\devkitA64\aarch64-none-elf\include' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-O2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fvisibility=default' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-ffunction-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fdata-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __SWITCH__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __RTLD_6XX__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND=Module' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND_ENUM=2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_PROGRAM_ID=0x0100E65002BB8000' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_USE_FAKEHEAP' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-isystem D:\Switch_StardewVally\toolchains\root\opt\devkitpro\devkitA64\aarch64-none-elf\include' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-O2' [-Wunused-command-line-argument]
+In file included from D:\Switch_StardewVally\runtime\source\lib\reloc\reloc.cpp:1:
+D:\Switch_StardewVally\runtime\source\lib\reloc\reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\lib\reloc\table\lookup.cpp:10:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\program\main.cpp:7:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\rings\wear_more_rings.cpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+clang: warning: argument unused during compilation: '-fvisibility=default' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-ffunction-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-fdata-sections' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __SWITCH__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D __RTLD_6XX__' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND=Module' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_LOAD_KIND_ENUM=2' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_PROGRAM_ID=0x0100E65002BB8000' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-D EXL_USE_FAKEHEAP' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-isystem D:\Switch_StardewVally\toolchains\root\opt\devkitpro\devkitA64\aarch64-none-elf\include' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-O2' [-Wunused-command-line-argument]
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\animals.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\hud.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\items.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\menu.cpp:3:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\npc_map.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/friendship.hpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\ranges.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\settings.cpp:4:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\shop.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\social.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\ui_info_suite.cpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+In file included from D:\Switch_StardewVally\runtime\source\uiinfo\world.cpp:2:
+In file included from D:\Switch_StardewVally\runtime/source\uiinfo/aot.hpp:5:
+In file included from D:\Switch_StardewVally\runtime/source\lib.hpp:34:
+D:\Switch_StardewVally\runtime/source\lib/reloc/reloc.hpp:93:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   93 |     }
+      |     ^
+1 warning generated.
+Patched NPDM: D:\Switch_StardewVally\runtime\build-clang\main.npdm
+SHA-256: F63D42112A3866CF6BF04ABD011F30BB3DF5E852BE244A2200FDDCD9A4898D85
+Added SVCs to ACID and ACI0: 0x74, 0x75
+Built: D:\Switch_StardewVally\runtime\build-clang\subsdk9
+Saved symbols: D:\Switch_StardewVally\runtime\build-clang\automate_lite-normal.elf
+Saved variant: D:\Switch_StardewVally\runtime\build-clang\subsdk9-normal
+Deployed staging copy: D:\Switch_StardewVally\atmosphere\contents\0100E65002BB8000\exefs\subsdk9
+Deployed NPDM overlay: D:\Switch_StardewVally\atmosphere\contents\0100E65002BB8000\exefs\main.npdm
+SHA-256: 8F43C7ECDFB4055D2EAC3B49B0F22C11A1D771D0754B24F7CC81FD80610C4415
+Fatal proof: False
+Phase 8 trace: False
+Phase 8 audit: False

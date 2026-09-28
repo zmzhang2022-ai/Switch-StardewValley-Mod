@@ -1,0 +1,14 @@
+{
+  "reference": "Fast Animations 1.16.0",
+  "baseline": "v13",
+  "fingerprints": 59,
+  "changed_v13_files": [
+    "hooks/game_update.cpp",
+    "project_metadata.hpp",
+    "uiinfo/settings.cpp",
+    "uiinfo/settings.hpp"
+  ],
+  "unchanged_v13_files": 253,
+  "extra_hooks": 0,
+  "hardware": "not executed"
+}

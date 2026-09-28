@@ -1,3 +1,15 @@
+## Current version: v13.1.1 — door-transition black-screen fix (prerelease)
+
+[Download](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/releases/tag/v13.1.1) · [Design and validation](docs/FAST_ANIMATIONS_SWITCH.md) · [Source and build](docs/BUILD_V13_1_1.md)
+
+Based on v13: Automate, elevator, four rings, UI information, automatic fishing and NPC world-map tracking. Lookup v14 is obsolete. FastAnimations defaults to 2x, including weapons/slingshots; settings allow disabling it or selecting 3x. Food confirmation is skipped when enabled. L3+R3 remains automatic fishing.
+
+The v13.1 fade clamp prevented vanilla alpha >1.1 / <-0.1 completion callbacks. v13.1.1 removes that clamp. Six original ARM64 branch boundaries and 42 timing cases pass, along with static, build, NSO and ZIP checks. **The fix has not been retested on Switch hardware.**
+
+Exit the game completely and merge the archive's `atmosphere` directory into the SD root, replacing `subsdk9` and `main.npdm` together. Stop using v13.1. Target: game 1.6.15.3, title `0100E65002BB8000`, build `A5C617C14A7F3F6620B3BC8136965A4822D32B9C`. See [BUILD_INFO.json](BUILD_INFO.json) for hashes. Older validation notes below do not imply hardware validation of this release.
+
+---
+
 <div align="center">
 
   <h1>Stardew Valley Switch Native Mod</h1>
@@ -130,10 +142,10 @@ runtime injection and `main.npdm` supplies the required SVC permissions.
 ### Copyright and Provenance
 
 - Original Mod code is licensed under [GPL-2.0-only](./LICENSE).
-- `subsdk9` contains embedded `AutomateLite v9`, copyright, and official repository identifiers.
+- `subsdk9` contains embedded `Automate Lite v13.1.1`, copyright, and official repository identifiers.
 - Version-specific Build ID: `A5C617C14A7F3F6620B3BC8136965A4822D32B9C`.
 - The public repository does not include the original game `main` or other game-distribution files.
-- The provenance patch preserves the NSO file size, module ID, and load segments.
+- Version identifiers are compiled from source; all three NSO segments are decompressed and hash-verified. Do not patch compressed NSO bytes.
 
 ## User Notice
 

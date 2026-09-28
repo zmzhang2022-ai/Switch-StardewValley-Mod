@@ -1,0 +1,13 @@
+{
+  "static_passed": true,
+  "unchanged_hook_installations": true,
+  "hook_count": 32,
+  "hook_address_overlaps": [],
+  "fingerprint_install_order_conflicts": [],
+  "unchanged_v13_sources": 253,
+  "unchanged_sdk_imports": true,
+  "fishing_source_unchanged": true,
+  "lookup_removed": true,
+  "hardware": "not executed",
+  "limitation": "Shared original object updates and pre-existing v13 risks require hardware regression; not proof of runtime isolation"
+}

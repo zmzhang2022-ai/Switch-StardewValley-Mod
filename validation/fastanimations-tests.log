@@ -1,0 +1,22 @@
+{
+  "reference": "Fast Animations 1.16.0",
+  "baseline": "v13",
+  "fingerprints": 59,
+  "changed_v13_files": [
+    "hooks/game_update.cpp",
+    "project_metadata.hpp",
+    "uiinfo/settings.cpp",
+    "uiinfo/settings.hpp"
+  ],
+  "unchanged_v13_files": 253,
+  "extra_hooks": 0,
+  "hardware": "not executed"
+}
+{"passed": true, "boundary_cases": 6, "timing_cases": 42, "old_deadlocks": 28}
+NPC map fingerprints verified: 43
+Verified fishing fingerprints: 56
+Passed ARM64 compile-time tests: text, XP, crop days, aging, seasons, range edges, config integrity, trampoline pool boundaries.
+This does not execute the game, SDK file operations, or Switch rendering.
+Fishing chord/release, stamina/time thresholds and food ranking compile-time tests passed. Game execution not performed.
+NPC map boundaries, tooltip fit, fingerprints and existing UI/fishing compile-time checks passed. Hardware not executed.
+FastAnimations config migration/timing, v13 source, NPC map, fishing and UI static checks passed. Hardware not executed.

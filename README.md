@@ -1,3 +1,17 @@
+## 当前版本：v13.1.1 · 出门黑屏修复（预发布）
+
+[下载安装包](https://github.com/zmzhang2022-ai/Switch-StardewValley-Mod/releases/tag/v13.1.1) · [完整设计与验证](docs/FAST_ANIMATIONS_SWITCH.md) · [构建与源码](docs/BUILD_V13_1_1.md)
+
+- 基于 v13，包含自动化、电梯、四戒指、UI 信息、自动钓鱼及 NPC 大地图；Lookup v14 已作废。
+- 新增动画加速：默认2倍，包含武器/弹弓；设置页可关闭或选3倍，跳过吃喝确认。L3+R3仍专用于自动钓鱼。
+- 修复 v13.1 出门黑屏：移除黑幕状态 alpha 的错误 [0,1] 限制，恢复原版 >1.1 / <-0.1 完成条件。
+- 6个原版 ARM64 分支边界、42组计时回归、静态检查、构建和NSO/ZIP校验通过；**修复后真机复测未完成**。
+- 完全退出游戏，将安装包内 `atmosphere` 合并到 SD 卡根目录，成对替换 `subsdk9` 和 `main.npdm`。不要继续使用 v13.1。
+
+目标游戏：1.6.15.3 / `0100E65002BB8000` / Build ID `A5C617C14A7F3F6620B3BC8136965A4822D32B9C`。产物身份见 [BUILD_INFO.json](BUILD_INFO.json)。下文保留基础功能介绍；旧版本验证范围不代表本版本真机通过。
+
+---
+
 <div align="center">
 
   <h1>Stardew Valley Switch Native Mod</h1>
@@ -57,10 +71,10 @@ atmosphere/
 ### 版权与版本标识
 
 - 本项目原创 Mod 代码采用 [GPL-2.0-only](./LICENSE)；
-- `subsdk9` 内保留 `AutomateLite v9`、版权人和官方仓库地址标识；
+- `subsdk9` 内保留 `Automate Lite v13.1.1`、版权人和官方仓库地址标识；
 - 版本专用 Build ID：`A5C617C14A7F3F6620B3BC8136965A4822D32B9C`；
 - 公开仓库不包含原版游戏 `main` 或其他游戏分发文件；
-- `subsdk9` 的标识补丁保持 NSO 文件大小、模块 ID 和加载段不变。
+- Version identifiers are compiled from source; all three NSO segments are decompressed and hash-verified. Do not patch compressed NSO bytes.
 
 ### Automate Lite
 
